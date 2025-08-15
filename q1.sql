@@ -10,26 +10,31 @@ BEGIN
 
     -- Handler for end of cursor
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET flag = TRUE;
+
+    -- Create temporary table once
     CREATE TEMPORARY TABLE IF NOT EXISTS temp_sub (
         SubscriberName VARCHAR(50)
     );
+
     -- Open cursor
     OPEN cur;
 
     -- Loop through cursor
     read_loop: LOOP
         FETCH cur INTO sname;
-        IF flag THEN
+        IF done THEN
             LEAVE read_loop;
         END IF;
-        SELECT sname AS SubscriberName;
-        INSERT INTO temp_subscribers VALUES (sname);
+
+        -- Insert each subscriber name into temp table
+        INSERT INTO temp_sub VALUES (sname);
     END LOOP;
 
-    -- find_subscriber_namelose cursor
+    -- Close cursor
     CLOSE cur;
-     -- Return all names at once
-    SELECT * FROM temp_subscribers;
+
+    -- Select all names at once (single table)
+    SELECT * FROM temp_sub;
 END;
 //
 
