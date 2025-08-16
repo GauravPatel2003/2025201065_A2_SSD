@@ -84,3 +84,5 @@ CALL SendData();
 
 **Note:**
 All procedures demonstrate the use of cursors, temporary tables, stored procedure calls, and aggregation to generate reports for subscribers and their watch history.
+
+Git Repo link:https://github.com/GauravPatel2003/2025201065_A2_SSD/tree/main
