@@ -30,7 +30,7 @@ CALL find_subscriber_name();
 **How to do:**
 
 ```sql
-CALL GetWatchHistoryBySubscriber(1);
+CALL GetWatchHistoryBySubscriber(Subscriber ID);
 ```
 
 ---
@@ -46,7 +46,7 @@ CALL GetWatchHistoryBySubscriber(1);
 **How to do:**
 
 ```sql
-CALL AddSubscriberIfNotExists('Amit');
+CALL AddSubscriberIfNotExists(Subscriber Name);
 ```
 
 ---
