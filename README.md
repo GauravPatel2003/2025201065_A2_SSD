@@ -1,5 +1,3 @@
-# README – Subscriber Watch History Procedures
-
 This project contains SQL procedures to manage subscribers and track their watch history. Below is a summary of each file and what it does.
 
 ---
